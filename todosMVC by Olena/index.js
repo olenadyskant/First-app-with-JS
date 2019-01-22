@@ -48,8 +48,17 @@ function crossLabelVal (event) {
 } 
 
 function changeBackground(event) {
-    // debugger;
+    var checkboxInp = event.data;
+    var patt = /[0-9]/g;
+    var signs = /\s/;
+    var inputView = document.getElementById('add-new');
+    if(patt.test(checkboxInp) || signs.test(checkboxInp)) {
+        inputView.style = 'background-color: rgba(252, 119, 163, 0.363)';
+    } else {
+        inputView.style = 'background-color:  rgba(141, 205, 248, 0.521);';
+    }
 }
+
 
 
 document.getElementById('add-new').addEventListener('change', addInputField);
